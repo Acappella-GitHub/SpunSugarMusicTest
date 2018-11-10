@@ -1,0 +1,176 @@
+.container {
+  width: 100%;
+  height: 100%;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+  box-shadow: 0 0 5px #AAA;
+  /* background: #DDD; */
+}
+
+.menu {
+  margin-left: 5px;
+  line-height: 40px;
+}
+
+.srch {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  height: 20px;
+}
+
+.srch picker {
+  padding: 1px 5px;
+  height: 20px;
+  background: #BBB;
+  border: 1px #d0d0d0 solid;
+  border-right: none;
+  border-radius: 5px 0 0 5px;
+  font-size: 12px;
+  line-height: 20px;
+  color: #555;
+}
+
+.srch input {
+  margin: 0;
+  padding: 0 5px;
+  height: 20px;
+  border: 1px #d0d0d0 solid;
+  border-radius: 0 5px 5px 0;
+  font-size: 12px;
+}
+
+.placeholder {
+  margin: 0;
+  padding: 0;
+  height: 20px;
+}
+
+.play-list {
+  width: 100%;
+  height: calc(100% - 145px);
+}
+
+.item {
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5px;
+  width: 100%;
+  height: 50px;
+  box-shadow: 0 -1px 0 #DDD inset;
+}
+
+.song-name {
+  width: 100%;
+  font-size: 16px;
+}
+
+.singer, .album-name, .platform {
+  padding: 0 13px 0 2px;
+  font-size: 12px;
+}
+
+.select {
+  position: absolute;
+  right: 5px;
+  width: 5%;
+  text-align: center;
+  line-height: 40px;
+}
+
+.console {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 60px;
+  /* background: #666; */
+}
+
+.time {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 15px;
+}
+
+.timer, .total-time {
+  font-size: 12px;
+}
+
+.play-bar {
+  margin: 0px;
+  width: 70%;
+}
+
+.mini-cover {
+  width: 45px;
+  height: 45px;
+}
+
+.song-info {
+  width: calc(100% - 180px);
+  height: 45px;
+}
+
+.prev, .play, .next {
+  width: 45px;
+  height: 45px;
+  text-align: center;
+  line-height: 45px;
+}
+
+.tab {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  height: 45px;
+  background: #DDD;
+}
+
+.search, .histories, .collection {
+  width: 45px;
+  height: 100%;
+  font-size: 22px;
+  text-align: center;
+  line-height: 45px;
+  
+}
+
+@font-face {
+  font-family: "iconfont";
+  src: url("data:application/font-woff;base64,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") format('woff');
+}
+
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-bofang:before { content: "\e6ac"; }
+
+.icon-music-prev:before { content: "\e6ba"; }
+
+.icon-shoucang:before { content: "\e603"; }
+
+.icon-lishi:before { content: "\e6b9"; }
+
+.icon-sousuo:before { content: "\e638"; }
+
+.icon-zanting:before { content: "\e505"; }
+
+.icon-caidanheng:before { content: "\e506"; }
+
+.icon-music-next:before { content: "\e609"; }
+
+.icon-menu:before { content: "\e791"; }

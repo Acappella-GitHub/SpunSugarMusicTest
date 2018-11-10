@@ -1,0 +1,44 @@
+<view class="container">
+  <view class="top">
+    <icon class="menu iconfont icon-menu"></icon>
+    <view class="srch">
+      <picker>QQ</picker>
+      <input placeholder="请输入关键字..." placeholder-class="placeholder" value="{{searchValue}}"/>
+    </view>
+    <icon class="menu iconfont icon-menu"></icon>
+  </view>
+
+  <scroll-view class="play-list" scroll-y="true">
+    <view class="item">
+      <text class="song-name">123</text>
+      <text class="singer">歌手：{{}}</text>
+      <text class="album-name">专辑：{{}}</text>
+      <text class="platform">来源：{{}}</text>
+      <icon class="select iconfont icon-caidanheng"></icon>
+    </view>
+  </scroll-view>
+
+  <view class="console" catch:tap="">
+    <view class="time">
+      <text class="timer">00:00</text>
+      <slider class="play-bar" block-size="12" backgroundColor="#A9A9A9" block-color="#888"></slider>
+      <text class="total-time">00:00</text>
+    </view>
+    <image class="mini-cover"></image>
+    <view class="song-info">
+      <text class="song-name"></text>
+      <text class="singer"></text>
+      <text class="album-name"></text>
+      <text class="platform"></text>
+    </view>
+    <icon class="prev iconfont icon-music-prev" catch:tap=""></icon>
+    <icon class="play iconfont icon-bofang" catch:tap=""></icon>
+    <icon class="next iconfont icon-music-next" catch:tap=""></icon>
+  </view>
+
+  <view class="tab">
+    <icon class="search iconfont icon-sousuo"></icon>
+    <icon class="histories iconfont icon-lishi"></icon>
+    <icon class="collection iconfont icon-shoucang"></icon>
+  </view>
+</view>
