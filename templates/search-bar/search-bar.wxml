@@ -1,0 +1,7 @@
+<template name="search-bar">
+  <view class="search-bar">
+    <picker mode="selector" range="{{}}" catch:change="{{}}">{{}}</picker>
+    <input placeholder="请输入关键字..." catch:confirm="{{}}"/>
+    <icon class="" catch:change="{{}}"></icon>
+  </view>
+</template>

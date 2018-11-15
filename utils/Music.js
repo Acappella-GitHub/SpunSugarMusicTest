@@ -7,13 +7,13 @@ export default class Music {
     let data = null;
     switch (platform) {
       case 'qq':
-        platf = 'qq';
+        platf = 'QQ音乐';
         url = 'https://api.bzqll.com/music/tencent/search';
         data = {key: '579621905', s: song_name};
         break;
 
-      case 'histories':
-        callback(wx.getStorageSync('histories'));
+      case 'history':
+        callback(wx.getStorageSync('history'));
         return;
         break;
 
@@ -30,7 +30,6 @@ export default class Music {
       url,
       data,
       success: (result) => {
-        console.log(result);
         result.data.data.map((val) => {val.platf = platf;});
         callback(result.data.data);
       }
@@ -40,8 +39,8 @@ export default class Music {
   static addSong(list_name, song_info) {
     let key = '';
     switch (list_name.toLocaleLowerCase()) {
-      case 'histories':
-        key = 'histories';
+      case 'history':
+        key = 'history';
         break;
 
       case 'collection':
@@ -71,8 +70,8 @@ export default class Music {
   static removeSong(list_name, song_info) {
     let key = '';
     switch (list_name.toLocaleLowerCase()) {
-      case 'histories':
-        key = 'histories';
+      case 'history':
+        key = 'history';
         break;
 
       case 'collection':

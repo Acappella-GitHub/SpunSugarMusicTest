@@ -2,19 +2,21 @@
   <view class="top-box">
     <icon class="menu iconfont icon-menu"></icon>
     <view class="search-bar">
-      <picker>QQ</picker>
-      <input placeholder="请输入关键字..." value="{{searchValue}}"/>
+      <picker mode="selector" range="{{array}}" catch:change="platformSelection">{{picker_text}}</picker>
+      <input placeholder="请输入关键字..." catch:confirm="songSearch"/>
     </view>
-    <icon class="menu iconfont icon-menu"></icon>
+    <icon class="iconfont icon-shanchu"></icon>
   </view>
 
   <scroll-view class="play-list-box" scroll-y="true">
-    <view class="play-list-item">
-      <text class="song-name">123</text>
-      <text class="singer">歌手：{{}}</text>
-      <text class="album-name">专辑：{{}}</text>
-      <text class="platform">来源：{{}}</text>
-      <icon class="select iconfont icon-caidanheng"></icon>
+    <view wx:for="{{song_info_arr}}" wx:for-index="i" class="play-list-item" catch:tap="">
+      <view class="song-info">
+        <text class="song-name">{{song_info_arr[i].name}}</text>
+        <text class="singer">{{song_info_arr[i].singer}}</text>
+        <text class="platform">{{song_info_arr[i].platf}}</text>
+      </view>
+      <icon data-song_info="{{song_info_arr[i]}}" wx:if="{{platform !== 'collection'}}" class="sear iconfont icon-shoucang" catch:tap="addSong"></icon>
+      <icon wx:if="{{platform === 'history' || platform === 'collection'}}" class="del iconfont icon-remove"></icon>
     </view>
   </scroll-view>
 
@@ -26,10 +28,9 @@
     </view>
     <image class="mini-cover"></image>
     <view class="song-info">
-      <text class="song-name"></text>
-      <text class="singer"></text>
-      <text class="album-name"></text>
-      <text class="platform"></text>
+      <text class="song-name">123112312312312312312323</text>
+      <text class="singer">445645645445645645656656</text>
+      <text class="platform">QQ音乐</text>
     </view>
     <icon class="prev iconfont icon-music-prev" catch:tap=""></icon>
     <icon class="play iconfont icon-bofang" catch:tap=""></icon>
@@ -37,8 +38,8 @@
   </view>
 
   <view class="tab-box">
-    <icon class="search iconfont icon-sousuo"></icon>
-    <icon class="histories iconfont icon-lishi"></icon>
-    <icon class="collection iconfont icon-shoucang"></icon>
+    <icon data-name="search_tab" class="search iconfont icon-sousuo" catch:tap="tabSwitch"></icon>
+    <icon data-name="history_tab" class="history iconfont icon-lishi" catch:tap="tabSwitch"></icon>
+    <icon data-name="collection_tab" class="collection iconfont icon-shoucang" catch:tap="tabSwitch"></icon>
   </view>
 </view>

@@ -1,2 +1,8 @@
 {
+  "usingComponents": {
+    "network": "/components/network/network",
+    "history": "/components/history/history",
+    "collection": "/components/collection/collection",
+    "player": "/components/player/player"
+  }
 }
